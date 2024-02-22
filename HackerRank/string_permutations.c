@@ -119,7 +119,7 @@ void string_sort(char** arr, const int len, int (*cmp_func)(const char* a, const
             }
         }
 
-        for (int j = i; j >= 1; j--)
+        for (int j = i; j >= from_index + 1; j--)
         {
             if (cmp_func(arr[j], arr[j - 1]) == 1)
             {
