@@ -1,0 +1,14 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/efaideleon/Documents/Practice C Problems/Practice-C-Problems/HackerRank/string_permutations'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _next_permutation, symObjAddr: 0x0, symBinAddr: 0x100003390, symSize: 0x148 }
+  - { offsetInCU: 0x46, offset: 0x46, size: 0x8, addend: 0x0, symName: _next_permutation, symObjAddr: 0x0, symBinAddr: 0x100003390, symSize: 0x148 }
+  - { offsetInCU: 0xB4, offset: 0xB4, size: 0x8, addend: 0x0, symName: _lexicographic_comp, symObjAddr: 0x148, symBinAddr: 0x1000034D8, symSize: 0x15C }
+  - { offsetInCU: 0x130, offset: 0x130, size: 0x8, addend: 0x0, symName: _swap_last_two_strings, symObjAddr: 0x2A4, symBinAddr: 0x100003634, symSize: 0x100 }
+  - { offsetInCU: 0x190, offset: 0x190, size: 0x8, addend: 0x0, symName: _swap_previous_with_next_in_order, symObjAddr: 0x3A4, symBinAddr: 0x100003734, symSize: 0x168 }
+  - { offsetInCU: 0x20C, offset: 0x20C, size: 0x8, addend: 0x0, symName: _string_sort, symObjAddr: 0x50C, symBinAddr: 0x10000389C, symSize: 0x2B8 }
+  - { offsetInCU: 0x2A0, offset: 0x2A0, size: 0x8, addend: 0x0, symName: _lexicographic_sort, symObjAddr: 0x7C4, symBinAddr: 0x100003B54, symSize: 0x120 }
+  - { offsetInCU: 0x300, offset: 0x300, size: 0x8, addend: 0x0, symName: _get_index_of_next_in_order_value, symObjAddr: 0x8E4, symBinAddr: 0x100003C74, symSize: 0x138 }
+  - { offsetInCU: 0x36E, offset: 0x36E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xA1C, symBinAddr: 0x100003DAC, symSize: 0x1A8 }
+...
