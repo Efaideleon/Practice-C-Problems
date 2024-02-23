@@ -45,7 +45,7 @@ int swap_previous_with_next_in_order(int n, char **s)
     int index_of_prev_value = 0;
     for (int i = n - 1; i >= 1; i--)
     {
-        if (lexicographic_comp(s[i], s[i - 1]) == 0 || lexicographic_comp(s[i], s[i - 1]) == 2)
+        if (lexicographic_comp(s[i], s[i - 1]) == 0 ) //|| lexicographic_comp(s[i], s[i - 1]) == 2
         {
             index_of_prev_value = i - 1;
             // find the next in order
