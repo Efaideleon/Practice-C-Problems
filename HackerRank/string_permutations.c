@@ -5,8 +5,8 @@
 int swap_last_two_strings(int n, char **s);
 int swap_previous_with_next_in_order(int n, char **s);
 int get_index_of_next_in_order_value(int n, int from_value_index, char **s);
-void string_sort(char** arr, const int len, int (*cmp_func)(const char* a, const char* b), int from_index);
-int lexicographic_sort(const char* a, const char* b);
+void string_sort(char **arr, const int len, int (*cmp_func)(const char *a, const char *b), int from_index);
+int lexicographic_sort(const char *a, const char *b);
 int lexicographic_comp(const char *a, const char *b);
 
 int next_permutation(int n, char **s)
@@ -45,12 +45,13 @@ int swap_previous_with_next_in_order(int n, char **s)
     int index_of_prev_value = 0;
     for (int i = n - 1; i >= 1; i--)
     {
-        if (lexicographic_comp(s[i], s[i - 1]) == 0 )
+        if (lexicographic_comp(s[i], s[i - 1]) == 0)
         {
             index_of_prev_value = i - 1;
             // find the next in order
             // if can't find it's program is over
-            if (index_of_prev_value < 1) {
+            if (index_of_prev_value < 1)
+            {
                 index_of_prev_value = 0;
             }
             prev_value = s[index_of_prev_value];
@@ -116,21 +117,21 @@ int swap_last_two_strings(int n, char **s)
     return 0;
 }
 
-void string_sort(char** arr, const int len, int (*cmp_func)(const char* a, const char* b), int from_index)
+void string_sort(char **arr, const int len, int (*cmp_func)(const char *a, const char *b), int from_index)
 {
     // arr: is the array of strings to sort
     // len: how many strings the arr has
     char *temp_arr = NULL;
     for (int i = from_index + 1; i < len; i++)
-        {
+    {
         if (i + 1 < len - 1)
         {
             if (cmp_func(arr[i], arr[i + 1]) == 0)
             {
                 temp_arr = arr[i];
-                arr[i] = (char *) realloc(arr[i + 1], sizeof(char) * strlen(arr[i+1]));
+                arr[i] = (char *)realloc(arr[i + 1], sizeof(char) * strlen(arr[i + 1]));
                 arr[i] = arr[i + 1];
-                arr[i + 1] = (char *) realloc(temp_arr, sizeof(char) * strlen(temp_arr));
+                arr[i + 1] = (char *)realloc(temp_arr, sizeof(char) * strlen(temp_arr));
                 arr[i + 1] = temp_arr;
             }
         }
@@ -140,16 +141,16 @@ void string_sort(char** arr, const int len, int (*cmp_func)(const char* a, const
             if (cmp_func(arr[j], arr[j - 1]) == 1)
             {
                 temp_arr = arr[j];
-                arr[j] = (char *) realloc(arr[j - 1], sizeof(char) * strlen(arr[j - 1]));
+                arr[j] = (char *)realloc(arr[j - 1], sizeof(char) * strlen(arr[j - 1]));
                 arr[j] = arr[j - 1];
-                arr[j - 1] = (char *) realloc(temp_arr, sizeof(char) * strlen(temp_arr));
+                arr[j - 1] = (char *)realloc(temp_arr, sizeof(char) * strlen(temp_arr));
                 arr[j - 1] = temp_arr;
             }
         }
     }
 }
 
-int lexicographic_sort(const char* a, const char* b)
+int lexicographic_sort(const char *a, const char *b)
 {
     // a: is a string passed by reference that will be printed later
     // return 0: false, 1: true
@@ -186,7 +187,8 @@ int lexicographic_comp(const char *a, const char *b)
     int len_a = strlen(a);
     int len_b = strlen(b);
     min_len = len_a;
-    if (min_len > len_b) {
+    if (min_len > len_b)
+    {
         min_len = len_b;
     }
 
@@ -198,10 +200,12 @@ int lexicographic_comp(const char *a, const char *b)
             return 0;
     }
 
-    if (len_a > len_b) {
+    if (len_a > len_b)
+    {
         return 0;
     }
-    if (len_a < len_b) {
+    if (len_a < len_b)
+    {
         return 1;
     }
 
@@ -210,23 +214,23 @@ int lexicographic_comp(const char *a, const char *b)
 
 int main()
 {
-	char **s;
-	int n;
-	scanf("%d", &n);
-	s = calloc(n, sizeof(char*));
-	for (int i = 0; i < n; i++)
-	{
-		s[i] = calloc(11, sizeof(char));
-		scanf("%s", s[i]);
-	}
-	do
-	{
-		for (int i = 0; i < n; i++)
-			printf("%s%c", s[i], i == n - 1 ? '\n' : ' ');
-	} while (next_permutation(n, s));
+    char **s;
+    int n;
+    scanf("%d", &n);
+    s = calloc(n, sizeof(char *));
+    for (int i = 0; i < n; i++)
+    {
+        s[i] = calloc(11, sizeof(char));
+        scanf("%s", s[i]);
+    }
+    do
+    {
+        for (int i = 0; i < n; i++)
+            printf("%s%c", s[i], i == n - 1 ? '\n' : ' ');
+    } while (next_permutation(n, s));
 
-	for (int i = 0; i < n; i++)
-		free(s[i]);
-	free(s);
-	return 0;
+    for (int i = 0; i < n; i++)
+        free(s[i]);
+    free(s);
+    return 0;
 }
